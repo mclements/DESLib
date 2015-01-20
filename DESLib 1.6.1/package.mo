@@ -26,7 +26,7 @@ The DEVSLib, SIMANLib and ARENALib libraries include interfaces to communicate w
 <dl>
 <dt><b>Author:</b></dt>
 <dd><a href=\"http://www.euclides.dia.uned.es/vsanz\"> Victorino Sanz </a><br>
-    Dpto. Inform·tica y Autom·tica, UNED<br>
+    Dpto. Inform√°tica y Autom√°tica, UNED<br>
     Juan del Rosal, 16<br>
     28040, Madrid<br>
     Spain<br>
@@ -52,7 +52,7 @@ see the license conditions (including the disclaimer of warranty) <a href=\"Mode
 "), uses(                           DEVSLib(version="2.2"),
       DESLib(version="1"),
       DESLib73(version="1"),
-      Modelica(version="2.2.1"),
+      Modelica(version="3.2.1"),
       Interactive(version="2")),
     version="1",
     conversion(noneFromVersion=""));
@@ -699,7 +699,7 @@ The structure of the package is:
 <dl>
 <dt><b>Author:</b></dt>
 <dd><a href=\"http://www.euclides.dia.uned.es/vsanz\"> Victorino Sanz </a><br>
-    Dpto. Inform·tica y Autom·tica, UNED<br>
+    Dpto. Inform√°tica y Autom√°tica, UNED<br>
     Juan del Rosal, 16<br>
     28040, Madrid<br>
     Spain<br>
@@ -721,7 +721,7 @@ Copyright 2009, Victorino Sanz.
 see the license conditions (including the disclaimer of warranty) <a href=\"Modelica://DESLib.ModelicaLicense2\">here</a> or at <a href=\"http://www.modelica.org/licenses/ModelicaLicense2\">http://www.modelica.org/licenses/ModelicaLicense2</a>
 </p><br>
 </HTML>
-"),   uses(Modelica(version="2.2.1")));
+"),   uses(Modelica(version="3.2.1")));
 
     package Variates "Random variates generation package"
 
@@ -763,7 +763,7 @@ Continuous Probability Distributions:
 <dl>
 <dt><b>Author:</b></dt>
 <dd><a href=\"http://www.euclides.dia.uned.es/vsanz\"> Victorino Sanz </a><br>
-    Dpto. Inform·tica y Autom·tica, UNED<br>
+    Dpto. Inform√°tica y Autom√°tica, UNED<br>
     Juan del Rosal, 16<br>
     28040, Madrid<br>
     Spain<br>
@@ -783,7 +783,7 @@ Copyright 2009, Victorino Sanz.
 see the license conditions (including the disclaimer of warranty) <a href=\"Modelica://DESLib.ModelicaLicense2\">here</a> or at <a href=\"http://www.modelica.org/licenses/ModelicaLicense2\">http://www.modelica.org/licenses/ModelicaLicense2</a>
 </p><br>
 </HTML>
-"),     uses(CMRG(version="2.2"), Modelica(version="2.2")));
+"),     uses(CMRG(version="2.2"), Modelica(version="3.2.1")));
       model UsersGuide "Users Guide"
 
           annotation (DocumentationClass=true, Documentation(info="<html>
@@ -969,7 +969,7 @@ This function can be used if the components of the CMRG generator are declared u
 (g.Cg1,g.Cg2,g.Cg3,g.Cg4,g.Cg5,g.Cg6,<br>
 g.Bg1,g.Bg2,g.Bg3,g.Bg4,g.Bg5,g.Bg6<br>
 g.Ig1,g.Ig2,g.Ig3,g.Ig4,g.Ig5,g.Ig6<br>
-g.Anti,g.IncPrec) := Variates.initGeneratorWrap();
+g.zAnti,g.zIncPrec) := Variates.initGeneratorWrap();
 </pre>
 
 </HTML>
@@ -993,32 +993,32 @@ g.Anti,g.IncPrec) := Variates.initGeneratorWrap();
         output Real Ig4;
         output Real Ig5;
         output Real Ig6;
-        output Integer Anti;
-        output Integer IncPrec;
+        output Integer zAnti;
+        output Integer zIncPrec;
       protected
         Generator g;
       algorithm
         g := initGenerator();
-        Cg1 := g.Cg[1];
-        Cg2 := g.Cg[2];
-        Cg3 := g.Cg[3];
-        Cg4 := g.Cg[4];
-        Cg5 := g.Cg[5];
-        Cg6 := g.Cg[6];
-        Bg1 := g.Bg[1];
-        Bg2 := g.Bg[2];
-        Bg3 := g.Bg[3];
-        Bg4 := g.Bg[4];
-        Bg5 := g.Bg[5];
-        Bg6 := g.Bg[6];
-        Ig1 := g.Ig[1];
-        Ig2 := g.Ig[2];
-        Ig3 := g.Ig[3];
-        Ig4 := g.Ig[4];
-        Ig5 := g.Ig[5];
-        Ig6 := g.Ig[6];
-        Anti := g.Anti;
-        IncPrec := g.IncPrec;
+        Cg1 := g.Cg1;
+        Cg2 := g.Cg2;
+        Cg3 := g.Cg3;
+        Cg4 := g.Cg4;
+        Cg5 := g.Cg5;
+        Cg6 := g.Cg6;
+        Bg1 := g.Bg1;
+        Bg2 := g.Bg2;
+        Bg3 := g.Bg3;
+        Bg4 := g.Bg4;
+        Bg5 := g.Bg5;
+        Bg6 := g.Bg6;
+        Ig1 := g.Ig1;
+        Ig2 := g.Ig2;
+        Ig3 := g.Ig3;
+        Ig4 := g.Ig4;
+        Ig5 := g.Ig5;
+        Ig6 := g.Ig6;
+        zAnti := g.zAnti;
+        zIncPrec := g.zIncPrec;
       end initGeneratorWrap;
 
       function U01 = CMRG.RandU01 "Uniform random number generation function"
@@ -1263,7 +1263,7 @@ GenerateVariate
 </p>
 
 <h3><font color=\"#008000\">Syntax</font></h3>
-<blockquote><pre><b>GenerateVariate</b>(Cg1,Cg2,Cg3,Cg4,Cg5,Cg6,Bg1,Bg2,Bg3,Bg4,Bg5,Bg6,Ig1,Ig2,Ig3,Ig4,Ig5,Ig6,Anti,IncPrec,distribution,p1,p2,p3,p4)</pre></blockquote>
+<blockquote><pre><b>GenerateVariate</b>(Cg1,Cg2,Cg3,Cg4,Cg5,Cg6,Bg1,Bg2,Bg3,Bg4,Bg5,Bg6,Ig1,Ig2,Ig3,Ig4,Ig5,Ig6,zAnti,zIncPrec,distribution,p1,p2,p3,p4)</pre></blockquote>
 
 
 <h3><font color=\"#008000\">Description</font></h3>
@@ -1300,10 +1300,10 @@ It returns the updated state of the generator also with its individual component
 
 <h3><font color=\"#008000\">Examples</font></h3>
 <pre>
- (u,g.Cg1,g.Cg2,g.Cg3,g.Cg4,g.Cg5,g.Cg6,g.Bg1,g.Bg2,g.Bg3,g.Bg4,g.Bg5,g.Bg6,g.Ig1,g.Ig2,g.Ig3,g.Ig4,g.Ig5,g.Ig6,g.Anti,g.IncPrec) := <br> GenerateVariate(g.Cg1,g.Cg2,g.Cg3,g.Cg4,g.Cg5,g.Cg6,g.Bg1,g.Bg2,g.Bg3,g.Bg4,g.Bg5,g.Bg6,g.Ig1,g.Ig2,g.Ig3,g.Ig4,g.Ig5,g.Ig6,g.Anti,g.IncPrec,2,0.4);
+ (u,g.Cg1,g.Cg2,g.Cg3,g.Cg4,g.Cg5,g.Cg6,g.Bg1,g.Bg2,g.Bg3,g.Bg4,g.Bg5,g.Bg6,g.Ig1,g.Ig2,g.Ig3,g.Ig4,g.Ig5,g.Ig6,g.zAnti,g.zIncPrec) := <br> GenerateVariate(g.Cg1,g.Cg2,g.Cg3,g.Cg4,g.Cg5,g.Cg6,g.Bg1,g.Bg2,g.Bg3,g.Bg4,g.Bg5,g.Bg6,g.Ig1,g.Ig2,g.Ig3,g.Ig4,g.Ig5,g.Ig6,g.zAnti,g.zIncPrec,2,0.4);
  // Generates a discrete variate (u) with Bernoulli(0.4) probability distribution.
 
- (u,g.Cg1,g.Cg2,g.Cg3,g.Cg4,g.Cg5,g.Cg6,g.Bg1,g.Bg2,g.Bg3,g.Bg4,g.Bg5,g.Bg6,g.Ig1,g.Ig2,g.Ig3,g.Ig4,g.Ig5,g.Ig6,g.Anti,g.IncPrec,) := <br> GenerateVariate(g.Cg1,g.Cg2,g.Cg3,g.Cg4,g.Cg5,g.Cg6,g.Bg1,g.Bg2,g.Bg3,g.Bg4,g.Bg5,g.Bg6,g.Ig1,g.Ig2,g.Ig3,g.Ig4,g.Ig5,g.Ig6,g.Anti,g.IncPrec,11,0.4,0.6);
+ (u,g.Cg1,g.Cg2,g.Cg3,g.Cg4,g.Cg5,g.Cg6,g.Bg1,g.Bg2,g.Bg3,g.Bg4,g.Bg5,g.Bg6,g.Ig1,g.Ig2,g.Ig3,g.Ig4,g.Ig5,g.Ig6,g.zAnti,g.zIncPrec,) := <br> GenerateVariate(g.Cg1,g.Cg2,g.Cg3,g.Cg4,g.Cg5,g.Cg6,g.Bg1,g.Bg2,g.Bg3,g.Bg4,g.Bg5,g.Bg6,g.Ig1,g.Ig2,g.Ig3,g.Ig4,g.Ig5,g.Ig6,g.zAnti,g.zIncPrec,11,0.4,0.6);
  // Generates a discrete variate (u) with Gamma(0.4,0.6) probability distribution.
 
 The example <a href=\"Modelica://DESLib.RandomLib.Examples.Simple.VariatesSimple2\">VariatesSimple2</a> uses of this function.
@@ -1359,32 +1359,32 @@ The example <a href=\"Modelica://DESLib.RandomLib.Examples.Simple.VariatesSimple
         output Real Ig4;
         output Real Ig5;
         output Real Ig6;
-        output Integer Anti;
-        output Integer IncPrec;
+        output Integer zAnti;
+        output Integer zIncPrec;
       protected
         Generator g;
         Generator gout;
       algorithm
-        g.Cg[1] := inCg1;
-        g.Cg[2] := inCg2;
-        g.Cg[3] := inCg3;
-        g.Cg[4] := inCg4;
-        g.Cg[5] := inCg5;
-        g.Cg[6] := inCg6;
-        g.Bg[1] := inBg1;
-        g.Bg[2] := inBg2;
-        g.Bg[3] := inBg3;
-        g.Bg[4] := inBg4;
-        g.Bg[5] := inBg5;
-        g.Bg[6] := inBg6;
-        g.Ig[1] := inIg1;
-        g.Ig[2] := inIg2;
-        g.Ig[3] := inIg3;
-        g.Ig[4] := inIg4;
-        g.Ig[5] := inIg5;
-        g.Ig[6] := inIg6;
-        g.Anti := inAnti;
-        g.IncPrec := inIncPrec;
+        g.Cg1 := inCg1;
+        g.Cg2 := inCg2;
+        g.Cg3 := inCg3;
+        g.Cg4 := inCg4;
+        g.Cg5 := inCg5;
+        g.Cg6 := inCg6;
+        g.Bg1 := inBg1;
+        g.Bg2 := inBg2;
+        g.Bg3 := inBg3;
+        g.Bg4 := inBg4;
+        g.Bg5 := inBg5;
+        g.Bg6 := inBg6;
+        g.Ig1 := inIg1;
+        g.Ig2 := inIg2;
+        g.Ig3 := inIg3;
+        g.Ig4 := inIg4;
+        g.Ig5 := inIg5;
+        g.Ig6 := inIg6;
+        g.zAnti := inAnti;
+        g.zIncPrec := inIncPrec;
         if distribution == 1 then
           // constant
           (u,gout) := Constant(
@@ -1488,26 +1488,26 @@ The example <a href=\"Modelica://DESLib.RandomLib.Examples.Simple.VariatesSimple
           u := 0;
           gout := initGenerator();
         end if;
-        Cg1 := gout.Cg[1];
-        Cg2 := gout.Cg[2];
-        Cg3 := gout.Cg[3];
-        Cg4 := gout.Cg[4];
-        Cg5 := gout.Cg[5];
-        Cg6 := gout.Cg[6];
-        Bg1 := gout.Bg[1];
-        Bg2 := gout.Bg[2];
-        Bg3 := gout.Bg[3];
-        Bg4 := gout.Bg[4];
-        Bg5 := gout.Bg[5];
-        Bg6 := gout.Bg[6];
-        Ig1 := gout.Ig[1];
-        Ig2 := gout.Ig[2];
-        Ig3 := gout.Ig[3];
-        Ig4 := gout.Ig[4];
-        Ig5 := gout.Ig[5];
-        Ig6 := gout.Ig[6];
-        Anti := gout.Anti;
-        IncPrec := gout.IncPrec;
+        Cg1 := gout.Cg1;
+        Cg2 := gout.Cg2;
+        Cg3 := gout.Cg3;
+        Cg4 := gout.Cg4;
+        Cg5 := gout.Cg5;
+        Cg6 := gout.Cg6;
+        Bg1 := gout.Bg1;
+        Bg2 := gout.Bg2;
+        Bg3 := gout.Bg3;
+        Bg4 := gout.Bg4;
+        Bg5 := gout.Bg5;
+        Bg6 := gout.Bg6;
+        Ig1 := gout.Ig1;
+        Ig2 := gout.Ig2;
+        Ig3 := gout.Ig3;
+        Ig4 := gout.Ig4;
+        Ig5 := gout.Ig5;
+        Ig6 := gout.Ig6;
+        zAnti := gout.zAnti;
+        zIncPrec := gout.zIncPrec;
       end GenerateVariateWrap;
 
       function Constant "Constant value generation"
@@ -1563,7 +1563,7 @@ The <b>Discrete</b> package contains functions for generating random variates fo
 <dl>
 <dt><b>Author:</b></dt>
 <dd><a href=\"http://www.euclides.dia.uned.es/vsanz\"> Victorino Sanz </a><br>
-    Dpto. Inform·tica y Autom·tica, UNED<br>
+    Dpto. Inform√°tica y Autom√°tica, UNED<br>
     Juan del Rosal, 16<br>
     28040, Madrid<br>
     Spain<br>
@@ -1583,7 +1583,7 @@ Copyright 2009, Victorino Sanz.
 see the license conditions (including the disclaimer of warranty) <a href=\"Modelica://DESLib.ModelicaLicense2\">here</a> or at <a href=\"http://www.modelica.org/licenses/ModelicaLicense2\">http://www.modelica.org/licenses/ModelicaLicense2</a>
 </p><br>
 </HTML>
-"),       uses(CMRG(version="2.2"), Modelica(version="2.2")));
+"),       uses(CMRG(version="2.2"), Modelica(version="3.2.1")));
 
         function Discrete "Discrete"
 
@@ -1958,7 +1958,7 @@ The <b>Continuous</b> package contains functions to generate random variates fol
 <dl>
 <dt><b>Author:</b></dt>
 <dd><a href=\"http://www.euclides.dia.uned.es/vsanz\"> Victorino Sanz </a><br>
-    Dpto. Inform·tica y Autom·tica, UNED<br>
+    Dpto. Inform√°tica y Autom√°tica, UNED<br>
     Juan del Rosal, 16<br>
     28040, Madrid<br>
     Spain<br>
@@ -1978,7 +1978,7 @@ Copyright 2009, Victorino Sanz.
 see the license conditions (including the disclaimer of warranty) <a href=\"Modelica://DESLib.ModelicaLicense2\">here</a> or at <a href=\"http://www.modelica.org/licenses/ModelicaLicense2\">http://www.modelica.org/licenses/ModelicaLicense2</a>
 </p><br>
 </HTML>
-"),       uses(CMRG(version="2.2"), Modelica(version="2.2")));
+"),       uses(CMRG(version="2.2"), Modelica(version="3.2.1")));
         function Continuous "Empirical Continuous"
 
         annotation(preferedView="info",
@@ -2704,7 +2704,7 @@ The pseudo-code algorithm used for this distribution is:<br><br>
 <dl>
 <dt><b>Author:</b></dt>
 <dd><a href=\"http://www.euclides.dia.uned.es/vsanz\"> Victorino Sanz </a><br>
-    Dpto. Inform·tica y Autom·tica, UNED<br>
+    Dpto. Inform√°tica y Autom√°tica, UNED<br>
     Juan del Rosal, 16<br>
     28040, Madrid<br>
     Spain<br>
@@ -3032,26 +3032,26 @@ The package seed is automatically managed, so it is not required to set an initi
       algorithm
         gout := g;
         /* Component 1 */
-        p1 := (a12 * gout.Cg[2]) - (a13n * gout.Cg[1]);
+        p1 := (a12 * gout.Cg2) - (a13n * gout.Cg1);
         k := floor(p1 / m1);
         p1 := p1 - ( k * m1);
         if (p1 < 0.0) then
           p1 := p1 + m1;
         end if;
-        gout.Cg[1] := gout.Cg[2];
-        gout.Cg[2] := gout.Cg[3];
-        gout.Cg[3] := p1;
+        gout.Cg1 := gout.Cg2;
+        gout.Cg2 := gout.Cg3;
+        gout.Cg3 := p1;
 
         /* Component 2 */
-        p2 := (a21 * gout.Cg[6]) - (a23n * gout.Cg[4]);
+        p2 := (a21 * gout.Cg6) - (a23n * gout.Cg4);
         k := floor(p2 / m2);
         p2 := p2 - (k * m2);
         if (p2 < 0.0) then
           p2 := p2 + m2;
         end if;
-        gout.Cg[4] := gout.Cg[5];
-        gout.Cg[5] := gout.Cg[6];
-        gout.Cg[6] := p2;
+        gout.Cg4 := gout.Cg5;
+        gout.Cg5 := gout.Cg6;
+        gout.Cg6 := p2;
 
         /* Combination */
         if (p1 > p2) then
@@ -3059,7 +3059,7 @@ The package seed is automatically managed, so it is not required to set an initi
         else
           u := (p1 - p2 + m1) * norm;
         end if;
-        if (gout.Anti <> 0) then
+        if (gout.zAnti <> 0) then
           out := 1-u;
         else
           out := u;
@@ -3078,7 +3078,7 @@ The package seed is automatically managed, so it is not required to set an initi
         Real uaux;
       algorithm
         (u,gout) := U01(g);
-        if (g.Anti == 0) then
+        if (g.zAnti == 0) then
           (uaux,gout) := U01(gout);
           u := u +( uaux * fact);
           if (u < 1.0) then
@@ -3185,11 +3185,11 @@ The package seed is automatically managed, so it is not required to set an initi
       /*---------------------------------------------------------------------*/
 
     record RngStream "Data structure for an RNG stream"
-      Real[6] Cg;
-      Real[6] Bg;
-      Real[6] Ig;
-      Integer Anti;
-      Integer IncPrec;
+      Real 
+	Bg1,Bg2,Bg3,Bg4,Bg5,Bg6,
+	Cg1,Cg2,Cg3,Cg4,Cg5,Cg6,
+	Ig1,Ig2,Ig3,Ig4,Ig5,Ig6;
+      Integer zAnti, zIncPrec;
     end RngStream;
 
       function CreateStream "CreateStream"
@@ -3227,15 +3227,11 @@ g := CMRG.CreateStream();
         Real[3] A;
       algorithm
         seed :=  Src.ReadSeed();
-        g.Anti := 0;
-        g.IncPrec := 0;
 
-        for i in 1:6 loop
-        //Modelica.Utilities.Streams.print(String(seed[i]));
-          g.Bg[i] := seed[i];
-          g.Cg[i] := seed[i];
-          g.Ig[i] := seed[i];
-        end for;
+	g := RngStream(seed[1],seed[2],seed[3],seed[4],seed[5],seed[6],
+		       seed[1],seed[2],seed[3],seed[4],seed[5],seed[6],
+		       seed[1],seed[2],seed[3],seed[4],seed[5],seed[6],
+		       0,0);
 
         for i in 1:3 loop
           A[i] := seed[i];
@@ -3300,10 +3296,18 @@ Reinitializes the state of the RngStream g to the initial state of the stream.
         Integer i;
       algorithm
         gout := g;
-        for i in 1:6 loop
-          gout.Cg[i] := gout.Ig[i];
-          gout.Bg[i] := gout.Ig[i];
-        end for;
+        gout.Cg1 := gout.Ig1;
+        gout.Cg2 := gout.Ig2;
+        gout.Cg3 := gout.Ig3;
+        gout.Cg4 := gout.Ig4;
+        gout.Cg5 := gout.Ig5;
+        gout.Cg6 := gout.Ig6;
+        gout.Bg1 := gout.Ig1;
+        gout.Bg2 := gout.Ig2;
+        gout.Bg3 := gout.Ig3;
+        gout.Bg4 := gout.Ig4;
+        gout.Bg5 := gout.Ig5;
+        gout.Bg6 := gout.Ig6;
       end ResetStartStream;
 
       /*-------------------------------------------------------------------------*/
@@ -3358,24 +3362,23 @@ ResetNextSubstream
       algorithm
         gout := g;
 
-        for i in 1:3 loop
-          A[i] := gout.Bg[i];
-        end for;
+	A := {gout.Bg1,gout.Bg2,gout.Bg3};
         A := Src.MatVecModM( Src.A1p76, A, Src.m1);
-        for i in 1:3 loop
-          gout.Bg[i] := A[i];
-        end for;
+        gout.Bg1 := A[1];
+        gout.Bg2 := A[2];
+        gout.Bg3 := A[3];
 
-        for i in 4:6 loop
-          A[i-3] := gout.Bg[i];
-        end for;
+	A := {gout.Bg4,gout.Bg5,gout.Bg6};
         A := Src.MatVecModM( Src.A2p76,A,  Src.m2);
-        for i in 4:6 loop
-          gout.Bg[i] := A[i-3];
-        end for;
-        for i in 1:6 loop
-          gout.Cg[i] := gout.Bg[i];
-        end for;
+        gout.Bg4 := A[1];
+        gout.Bg5 := A[2];
+        gout.Bg6 := A[3];
+        gout.Cg1 := gout.Bg1;
+        gout.Cg2 := gout.Bg2;
+        gout.Cg3 := gout.Bg3;
+        gout.Cg4 := gout.Bg4;
+        gout.Cg5 := gout.Bg5;
+        gout.Cg6 := gout.Bg6;
       end ResetNextSubstream;
 
       /*-------------------------------------------------------------------------*/
@@ -3424,9 +3427,13 @@ ResetStartSubstream
         Integer i;
       algorithm
         gout := g;
-        for i in 1:6 loop
-          gout.Cg[i] := gout.Bg[i];
-        end for;
+        
+        gout.Cg1 := gout.Bg1;
+        gout.Cg2 := gout.Bg2;
+        gout.Cg3 := gout.Bg3;
+        gout.Cg4 := gout.Bg4;
+        gout.Cg5 := gout.Bg5;
+        gout.Cg6 := gout.Bg6;
       end ResetStartSubstream;
 
       /*-------------------------------------------------------------------------*/
@@ -3520,12 +3527,10 @@ SetSeed
         if (Src.CheckSeed( seed) <> 0) then
           out := -1;  /* FAILURE */
         else
-          for i in 1:6 loop
-            gout.Cg[i] := seed[i];
-            gout.Bg[i] := seed[i];
-            gout.Ig[i] := seed[i];
-
-         end for;
+	  gout := RngStream(seed[1],seed[2],seed[3],seed[4],seed[5],seed[6],
+			    seed[1],seed[2],seed[3],seed[4],seed[5],seed[6],
+			    seed[1],seed[2],seed[3],seed[4],seed[5],seed[6],
+			    g.zAnti,g.zIncPrec);
           out := 0;      /* SUCCESS */
         end if;
       end SetSeed;
@@ -3570,21 +3575,17 @@ SetSeed
           C2 := Src.MatMatModM( B2, C2, Src.m2);
         end if;
 
-       for i in 1:3 loop
-          A[i] := gout.Cg[i];
-        end for;
+	A := {gout.Cg1,gout.Cg2,gout.Cg3};
         A := Src.MatVecModM( C1, A, Src.m1);
-        for i in 1:3 loop
-          gout.Cg[i] := A[i];
-        end for;
+	gout.Cg1 := A[1];
+	gout.Cg2 := A[2];
+	gout.Cg3 := A[3];
 
-        for i in 4:6 loop
-          A[i-3] := gout.Cg[i];
-        end for;
+	A := {gout.Cg4,gout.Cg5,gout.Cg6};
         A := Src.MatVecModM( C2,A,  Src.m2);
-        for i in 4:6 loop
-          gout.Cg[i] := A[i-3];
-        end for;
+	gout.Cg4 := A[1];
+	gout.Cg5 := A[2];
+	gout.Cg6 := A[3];
 
       end AdvanceState;
 
@@ -3622,9 +3623,7 @@ GetState
       protected
         Integer i;
       algorithm
-        for i in 1:6 loop
-          seed[i] := g.Cg[i];
-        end for;
+	seed := {g.Cg1,g.Cg2,g.Cg3,g.Cg4,g.Cg5,g.Cg6};
       end GetState;
 
       /*-------------------------------------------------------------------------*/
@@ -3674,7 +3673,7 @@ Since Modelica only have one precision for Real numbers, the effect of this func
         output RngStream gout "Updated RngStream";
       algorithm
         gout := g;
-        gout.IncPrec := incp;
+        gout.zIncPrec := incp;
       end IncreasedPrecis;
 
       /*-------------------------------------------------------------------------*/
@@ -3719,7 +3718,7 @@ With a &lt;> 0, the RngStream g will generate antithetic numbers (U-1 instead of
         output RngStream gout "Updated RngStream";
       algorithm
         gout := g;
-        gout.Anti := a;
+        gout.zAnti := a;
       end SetAntithetic;
 
       /*-------------------------------------------------------------------------*/
@@ -3771,7 +3770,7 @@ end Example;
         output Real out "Generated uniform random number";
         output RngStream gout "Updated RngStream";
       algorithm
-        if (g.IncPrec <> 0) then
+        if (g.zIncPrec <> 0) then
           (out,gout)  := Src.U01d(g);
         else
           (out,gout)  := Src.U01(g);
@@ -3835,9 +3834,9 @@ end Example;
         out := i+ integer((j-i +1.0) * u);
       end RandInt;
 
-      annotation (uses(Modelica(version="2.2.1")));
+      annotation (uses(Modelica(version="3.2.1")));
     end CMRG;
-    annotation (uses(Modelica(version="2.2.1")));
+    annotation (uses(Modelica(version="3.2.1")));
 
     package Examples
       "Examples of random uniform numbers and random variates generation"
@@ -3861,7 +3860,7 @@ This example has been used for validating the implementation of the CMRG library
 <dl>
 <dt><b>Author:</b></dt>
 <dd><a href=\"http://www.euclides.dia.uned.es/vsanz\"> Victorino Sanz </a><br>
-    Dpto. Inform·tica y Autom·tica, UNED<br>
+    Dpto. Inform√°tica y Autom√°tica, UNED<br>
     Juan del Rosal, 16<br>
     28040, Madrid<br>
     Spain<br>
@@ -4011,7 +4010,7 @@ see the license conditions (including the disclaimer of warranty) <a href=\"Mode
         input CMRG.RngStream g;
       algorithm
         Modelica.Utilities.Streams.print("The current state of the Rngstream");
-        Modelica.Utilities.Streams.print("Cg = {"+String(g.Cg[1],significantDigits=14)+","+String(g.Cg[2],significantDigits=14)+","+String(g.Cg[3],significantDigits=14)+","+String(g.Cg[4],significantDigits=14)+","+String(g.Cg[5],significantDigits=14)+","+String(g.Cg[6],significantDigits=14)+"}\n");
+        Modelica.Utilities.Streams.print("Cg = {"+String(g.Cg1,significantDigits=14)+","+String(g.Cg2,significantDigits=14)+","+String(g.Cg3,significantDigits=14)+","+String(g.Cg4,significantDigits=14)+","+String(g.Cg5,significantDigits=14)+","+String(g.Cg6,significantDigits=14)+"}\n");
       end WriteState;
     algorithm
       when time <= 0 then
@@ -4209,7 +4208,7 @@ For a detailed description of the implementation of the package and its internal
 <dl>
 <dt><b>Author:</b></dt>
 <dd><a href=\"http://www.euclides.dia.uned.es/vsanz\"> Victorino Sanz </a><br>
-    Dpto. Inform·tica y Autom·tica, UNED<br>
+    Dpto. Inform√°tica y Autom√°tica, UNED<br>
     Juan del Rosal, 16<br>
     28040, Madrid<br>
     Spain<br>
@@ -4229,7 +4228,7 @@ see the license conditions (including the disclaimer of warranty) <a href=\"Mode
 </p><br>
 
 </HTML>
-"),   uses(Modelica(version="2.2.1")));
+"),   uses(Modelica(version="3.2.1")));
 
   model UsersGuide "Users Guide"
 
@@ -4340,7 +4339,7 @@ when this situation happens the confluent transition function is used to update 
 It is also possible to calculate the new state without using the internal and external transition functions.
 </ul>
 </p>
-<img src=\"..\Figs\\DEVS-basic_model.png\">
+<img src=\"..\\Figs\\DEVS-basic_model.png\">
 
 
 
@@ -4370,7 +4369,7 @@ Selecting the atomicDraft package and left clicking in it, the menu is displayed
 The following figure shows the menu and the duplicate option.
 </p>
  <br>
-<img src=\"..\Figs\\newA1.png\">
+<img src=\"..\\Figs\\newA1.png\">
 
 <p>
 The new name for the atomic model has to be indicated, and the place to store the package selected among the Dymola's Packages tree structure.
@@ -4414,7 +4413,7 @@ At the end, the numIn and numOut parameters of the model have also to be set, in
 An example of port definition and equation edition is shown in the next figure.
 </p>
 <br>
-<img src=\"..\Figs\\newA21-2.png\"><img src=\"..\Figs\\newA22-2.png\">
+<img src=\"..\\Figs\\newA21-2.png\"><img src=\"..\\Figs\\newA22-2.png\">
 
 
 
@@ -4524,7 +4523,7 @@ Each ouptut port will be connected to one or more output ports of one or several
 The following images show examples of DEVS coupled models.
 </p>
 <br>
-<img src=\"..\Figs\\CoupledDEVS.png\"><img src=\"..\Figs\\devs-coupled.png\">
+<img src=\"..\\Figs\\CoupledDEVS.png\"><img src=\"..\\Figs\\devs-coupled.png\">
 
 
 <h3><font color=\"#008000\">Coupled models with DEVSLib</font></h3>
@@ -4543,7 +4542,7 @@ The steps to build a new coupled model are:
 The following figure shows a simple coupled DEVS model (corresponds to the <a href=\"Modelica://DESLib.DEVSLib.Examples.SimpleModels.NetSwitch\">NetSwitch</a>
 model of the library examples).<br>
 
-<img src=\"..\Figs\\coupled-2.png\">
+<img src=\"..\\Figs\\coupled-2.png\">
 </p>
 
 <h3><font color=\"#008000\">Duplicating Messages</font></h3>
@@ -4564,7 +4563,7 @@ An example of DUP usage is provided in the <a href=\"Modelica://DESLib.DEVSLib.E
  and is shown in the next figure.
 </p>
 <br>
-<img src=\"..\Figs\\dup-2.png\">
+<img src=\"..\\Figs\\dup-2.png\">
 
 <h3><font color=\"#008000\">Algebraic Loops</font></h3>
 <p>
@@ -4582,7 +4581,7 @@ The BreakLoop model breaks the loop by including a \"pre\" statement in the dete
 An example of BreakLoop usage is provided in the <a href=\"Modelica://DESLib.DEVSLib.Examples.SimpleModels.testSwitch2\">testSwitch2</a> model, and is shown in the next figure.
 </p>
 <br>
-<img src=\"..\Figs\\loop.png\">
+<img src=\"..\\Figs\\loop.png\">
 
 
 </html>"));
@@ -4620,7 +4619,7 @@ The communication from the continuous part to the discrete part is performed usi
 An example of this kind of communication is shown in the next figure.
 </p>
 <br>
-<img src=\"..\Figs\\codi.png\">
+<img src=\"..\\Figs\\codi.png\">
 
 
 
@@ -4634,7 +4633,7 @@ The generated continuous signal is a constant piecewise signal, since the change
 An example of this kind of communication is shown in the next figure.
 </p>
 <br>
-<img src=\"..\Figs\\dico-2.png\">
+<img src=\"..\\Figs\\dico-2.png\">
 
 
 </html>"));
@@ -4777,7 +4776,7 @@ The components of the new coupled model can be included and interconnected using
                        annotation (Placement(transformation(extent=[96,-10;116,10], rotation=0)));
       annotation (Diagram);
     end coupledDraft;
-    annotation (uses(Modelica(version="2.2.1")));
+    annotation (uses(Modelica(version="3.2.1")));
 
     package AuxModels "Auxiliary models"
 
@@ -14549,7 +14548,7 @@ In both models, the variable QAVG has been included to show the average number o
               if (sout.gen < s.ng) or (s.ng == 0) then
               (sout.sigma,sout.Cg1,sout.Cg2,sout.Cg3,sout.Cg4,sout.Cg5,sout.Cg6,
                 sout.Bg1,sout.Bg2,sout.Bg3,sout.Bg4,sout.Bg5,sout.Bg6,sout.Ig1,
-                sout.Ig2,sout.Ig3,sout.Ig4,sout.Ig5,sout.Ig6,sout.Anti,sout.IncPrec)
+                sout.Ig2,sout.Ig3,sout.Ig4,sout.Ig5,sout.Ig6,sout.zAnti,sout.zIncPrec)
                 := DESLib.RandomLib.Variates.GenerateVariateWrap(
                             sout.Cg1,
                             sout.Cg2,
@@ -14569,8 +14568,8 @@ In both models, the variable QAVG has been included to show the average number o
                             sout.Ig4,
                             sout.Ig5,
                             sout.Ig6,
-                            sout.Anti,
-                            sout.IncPrec,
+                            sout.zAnti,
+                            sout.zIncPrec,
                             9,
                             10);
                 //sout.sigma := ia; // period
@@ -14628,8 +14627,8 @@ In both models, the variable QAVG has been included to show the average number o
               Real Ig4;
               Real Ig5;
               Real Ig6;
-              Integer Anti;
-              Integer IncPrec;
+              Integer zAnti;
+              Integer zIncPrec;
             end st;
 
             function initst
@@ -14649,7 +14648,7 @@ In both models, the variable QAVG has been included to show the average number o
               out.gen := 0;
             (out.Cg1,out.Cg2,out.Cg3,out.Cg4,out.Cg5,out.Cg6,out.Bg1,out.Bg2,
               out.Bg3,out.Bg4,out.Bg5,out.Bg6,out.Ig1,out.Ig2,out.Ig3,out.Ig4,
-              out.Ig5,out.Ig6,out.Anti,out.IncPrec) :=
+              out.Ig5,out.Ig6,out.zAnti,out.zIncPrec) :=
               DESLib.RandomLib.Variates.initGeneratorWrap();
             end initst;
           end Interarrival;
@@ -14716,7 +14715,7 @@ In both models, the variable QAVG has been included to show the average number o
               sout.phase := 2;
               (sout.sigma,sout.Cg1,sout.Cg2,sout.Cg3,sout.Cg4,sout.Cg5,sout.Cg6,
                 sout.Bg1,sout.Bg2,sout.Bg3,sout.Bg4,sout.Bg5,sout.Bg6,sout.Ig1,
-                sout.Ig2,sout.Ig3,sout.Ig4,sout.Ig5,sout.Ig6,sout.Anti,sout.IncPrec)
+                sout.Ig2,sout.Ig3,sout.Ig4,sout.Ig5,sout.Ig6,sout.zAnti,sout.zIncPrec)
                 := DESLib.RandomLib.Variates.GenerateVariateWrap(
                           sout.Cg1,
                           sout.Cg2,
@@ -14736,8 +14735,8 @@ In both models, the variable QAVG has been included to show the average number o
                           sout.Ig4,
                           sout.Ig5,
                           sout.Ig6,
-                          sout.Anti,
-                          sout.IncPrec,
+                          sout.zAnti,
+                          sout.zIncPrec,
                           9,
                           8);
               //sout.sigma := pt;
@@ -14766,7 +14765,7 @@ In both models, the variable QAVG has been included to show the average number o
                 sout.phase := 2;
                 (sout.sigma,sout.Cg1,sout.Cg2,sout.Cg3,sout.Cg4,sout.Cg5,sout.Cg6,
                   sout.Bg1,sout.Bg2,sout.Bg3,sout.Bg4,sout.Bg5,sout.Bg6,sout.Ig1,
-                  sout.Ig2,sout.Ig3,sout.Ig4,sout.Ig5,sout.Ig6,sout.Anti,sout.IncPrec)
+                  sout.Ig2,sout.Ig3,sout.Ig4,sout.Ig5,sout.Ig6,sout.zAnti,sout.zIncPrec)
                   := DESLib.RandomLib.Variates.GenerateVariateWrap(
                             sout.Cg1,
                             sout.Cg2,
@@ -14786,8 +14785,8 @@ In both models, the variable QAVG has been included to show the average number o
                             sout.Ig4,
                             sout.Ig5,
                             sout.Ig6,
-                            sout.Anti,
-                            sout.IncPrec,
+                            sout.zAnti,
+                            sout.zIncPrec,
                             9,
                             8);
                 // sout.sigma := pt; // random processing_time
@@ -14851,8 +14850,8 @@ In both models, the variable QAVG has been included to show the average number o
               Real Ig4;
               Real Ig5;
               Real Ig6;
-              Integer Anti;
-              Integer IncPrec;
+              Integer zAnti;
+              Integer zIncPrec;
           end st;
 
           function initst
@@ -14870,7 +14869,7 @@ In both models, the variable QAVG has been included to show the average number o
             out.Qlast := 0;
             (out.Cg1,out.Cg2,out.Cg3,out.Cg4,out.Cg5,out.Cg6,out.Bg1,out.Bg2,
               out.Bg3,out.Bg4,out.Bg5,out.Bg6,out.Ig1,out.Ig2,out.Ig3,out.Ig4,
-              out.Ig5,out.Ig6,out.Anti,out.IncPrec) :=
+              out.Ig5,out.Ig6,out.zAnti,out.zIncPrec) :=
               DESLib.RandomLib.Variates.initGeneratorWrap();
           end initst;
         end ProcessorWithQueue;
@@ -15248,7 +15247,7 @@ REFERENCES:<br>
 "));
 
         package CraneSystem
-        annotation (uses(Modelica(version="2.2.1")));
+        annotation (uses(Modelica(version="3.2.1")));
 
         model LinearCrane
             import Modelica.SIunits.*;
@@ -18132,7 +18131,7 @@ The state can be defined using the st record, and initialized using the initst f
                   // Capacidad de cada compresor, por si quisiera asignarse a cada uno una capacidad diferente
                   parameter Real comps[NUM_COMPRESSORS] = ones(NUM_COMPRESSORS)*comp;
 
-                  // Variables del controlador: error (e), tÈrmino integral (I) y salida (u)
+                  // Variables del controlador: error (e), t√©rmino integral (I) y salida (u)
                   Real e;
                   Real I;
                   Real u;
@@ -18158,7 +18157,7 @@ The state can be defined using the st record, and initialized using the initst f
                   Modelica.Blocks.Interfaces.RealOutput numCompON
                                                           annotation (extent=[88,-10;108,10]);
                 equation
-                // N˙mero de compresores que est·n a ON
+                // N√∫mero de compresores que est√°n a ON
                    numCompON = sum(if compON[i] then 1 else 0 for i in 1:NUM_COMPRESSORS);
 
                 // Controlador
@@ -18175,7 +18174,7 @@ The state can be defined using the st record, and initialized using the initst f
                   for i in 1:NUM_COMPRESSORS loop
                      compON[i] = u > C[i];
                   end for;
-                // ConexiÛn del controlador a los compresores
+                // Conexi√≥n del controlador a los compresores
                   for i in 1:NUM_COMPRESSORS loop
                      compressor[i].ON = compON[i];
                   end for;
@@ -18229,7 +18228,7 @@ The state can be defined using the st record, and initialized using the initst f
                   // Capacidad de cada compresor, por si quisiera asignarse a cada uno una capacidad diferente
                   parameter Real comps[NUM_COMPRESSORS] = ones(NUM_COMPRESSORS)*comp;
 
-                  // Variables del controlador: error (e), tÈrmino integral (I) y salida (u)
+                  // Variables del controlador: error (e), t√©rmino integral (I) y salida (u)
                   Real e;
                   Real I;
                   Real u;
@@ -18256,7 +18255,7 @@ The state can be defined using the st record, and initialized using the initst f
                   Modelica.Blocks.Interfaces.RealOutput numCompON
                                                           annotation (extent=[88,-10;108,10]);
                 equation
-                // N˙mero de compresores que est·n a ON
+                // N√∫mero de compresores que est√°n a ON
                    numCompON = sum(if compON[i] then 1 else 0 for i in 1:NUM_COMPRESSORS);
 
                 // My controller
@@ -18274,7 +18273,7 @@ The state can be defined using the st record, and initialized using the initst f
                   for i in 1:NUM_COMPRESSORS loop
                      compON[i] = u > C[i];
                   end for;
-                // ConexiÛn del controlador a los compresores
+                // Conexi√≥n del controlador a los compresores
                   for i in 1:NUM_COMPRESSORS loop
                      compressor[i].ON = compON[i];
                   end for;
@@ -18923,7 +18922,7 @@ The state can be defined using the st record, and initialized using the initst f
 
         package Continuous2
 
-        annotation(uses(Modelica(version="2.2.1")));
+        annotation(uses(Modelica(version="3.2.1")));
 
         model DisplayCase
                   parameter Real UAgoodsair
@@ -19214,7 +19213,7 @@ The state can be defined using the st record, and initialized using the initst f
                   // Capacidad de cada compresor, por si quisiera asignarse a cada uno una capacidad diferente
                   parameter Real comps[NUM_COMPRESSORS] = ones(NUM_COMPRESSORS)*comp;
 
-                  // Variables del controlador: error (e), tÈrmino integral (I) y salida (u)
+                  // Variables del controlador: error (e), t√©rmino integral (I) y salida (u)
                   Real e;
                   Real I;
                   Real u;
@@ -19241,7 +19240,7 @@ The state can be defined using the st record, and initialized using the initst f
                  annotation (extent=[88,-10;108,10]);
 
                 equation
-                // N˙mero de compresores que est·n a ON
+                // N√∫mero de compresores que est√°n a ON
                    numCompON = sum(if compON[i] then 1 else 0 for i in 1:NUM_COMPRESSORS);
 
                 // Controlador
@@ -19257,14 +19256,14 @@ The state can be defined using the st record, and initialized using the initst f
                    der(I) =  (Kp/Taoi) * e;
                    u = Kp * e + I;
                    when sample(0,sampleTime) then
-                      // SaturaciÛn de los errores
+                      // Saturaci√≥n de los errores
                       reinit(I,
                              if abs(SetPoint-Psuc)<DB and pre(I)<0 then
                                   0 else
                                   if abs(SetPoint-Psuc)<DB and pre(I)>100 then
                                        100 else
                                        pre(I));
-                      // ActivaciÛn de los compresores
+                      // Activaci√≥n de los compresores
                      for i in 1:NUM_COMPRESSORS loop
                         compON[i] = u > C[i];
                      end for;
@@ -19279,7 +19278,7 @@ The state can be defined using the st record, and initialized using the initst f
                 //  for i in 1:NUM_COMPRESSORS loop
                 //     compON[i] = u > C[i];
                 //  end for;
-                // ConexiÛn del controlador a los compresores
+                // Conexi√≥n del controlador a los compresores
                   for i in 1:NUM_COMPRESSORS loop
                      compressor[i].ON = compON[i];
                   end for;
@@ -21172,7 +21171,7 @@ For a detailed description of the implementation see the <a href=\"Modelica://DE
 
 
 </HTML>
-"),     uses(Modelica(version="2.2.1")));
+"),     uses(Modelica(version="3.2.1")));
 
     model DevelopersGuide "Developers Guide"
 
@@ -21505,7 +21504,7 @@ The transition to execute is decided by the following equations, that use the pr
 
 </p>
 </HTML>
-"),       uses(Modelica(version="2.2.1")));
+"),       uses(Modelica(version="3.2.1")));
 
         parameter String name="AtomicDEVS";
         replaceable record State = stdState;
@@ -21766,7 +21765,7 @@ This package contains the interfaces used by the DEVS models to send and receive
 
 
 </HTML>
-"),       uses(Modelica(version="2.2.1")));
+"),       uses(Modelica(version="3.2.1")));
 
         connector inPort "Input port for receiving messages"
 
@@ -21781,7 +21780,7 @@ The queue represents a reference to the storage space for the incoming messages.
 </p>
 
 </HTML>
-"),         uses(Modelica(version="2.2.1")));
+"),         uses(Modelica(version="3.2.1")));
 
           flow input Real event;
           Integer queue;
@@ -21814,7 +21813,7 @@ The queue represents a reference to the storage space for the outgoing messages.
 </p>
 
 </HTML>
-"),         uses(Modelica(version="2.2.1")));
+"),         uses(Modelica(version="3.2.1")));
           flow output Real event;
           Integer queue;
              annotation (Icon(Polygon(points=[-60,60; 60,0; 60,0; -60,-60; -60,60],
@@ -21953,7 +21952,7 @@ because the output port can not store the references to the queues for incoming 
 
 
 </HTML>
-"),       uses(Modelica(version="2.2.1")));
+"),       uses(Modelica(version="3.2.1")));
 
         model dupevent
                    extends AtomicDEVS(numOut=2,redeclare record State = st);
@@ -22157,7 +22156,7 @@ If the condition is true, the message is sent through the port 1, and otherwise 
 
 
 </HTML>
-"),       uses(Modelica(version="2.2.1")));
+"),       uses(Modelica(version="3.2.1")));
 
         model select
           replaceable Boolean Condition = true
@@ -22316,7 +22315,7 @@ The same models have been implemented to work with Real values or Boolean values
 </ul>
 </p>
 </HTML>
-"),       uses(Modelica(version="2.2.1")));
+"),       uses(Modelica(version="3.2.1")));
 
         model DiCo
 
@@ -22328,7 +22327,7 @@ This model translate messages into a piecewise continuous-time signal.
 <p>
 The value of the output signal is equaled to the value of the last message received.
 </p>
-</HTML>"),         uses(Modelica(version="2.2.1")));
+</HTML>"),         uses(Modelica(version="3.2.1")));
 
           Interfaces.inPort inport
                         annotation (extent=[-116,-10;-96,10]);
@@ -22374,7 +22373,7 @@ The <i>EType</i> parameter defines the value for the type variable of the genera
 
 
 </HTML>
-"),       uses(Modelica(version="2.2.1")));
+"),       uses(Modelica(version="3.2.1")));
 
         replaceable Real q = 1 "Quantum value";
         parameter Real Threshold = 1e-010 "Detection value threshold";
@@ -22427,7 +22426,7 @@ The <i>EType</i> parameter defines the value for the type variable of the genera
 
 
 </HTML>
-"),       uses(Modelica(version="2.2.1")),
+"),       uses(Modelica(version="3.2.1")),
           Icon(Line(
                   points=[60,80;80,80], style(
                   color=0, rgbcolor={0,0,255},
@@ -22491,7 +22490,7 @@ The <i>EType</i> parameter defines the value for the type variable of the genera
 
 
 </HTML>
-"),       uses(Modelica(version="2.2.1")),
+"),       uses(Modelica(version="3.2.1")),
           Icon(Line(
                   points=[80,-80;80,-60], style(
                   rgbcolor={0,0,255},
@@ -22544,7 +22543,7 @@ The generated message has a value equal to the signal and a type equal to the <i
 </p>
 
 </HTML>
-"),       uses(Modelica(version="2.2.1")));
+"),       uses(Modelica(version="3.2.1")));
 
         replaceable Real Value = 1 "Cross value";
         //parameter Real Threshold = 1e-010 "Detection value threshold";
@@ -22595,7 +22594,7 @@ The generated message has a value equal to the signal and a type equal to the <i
 </p>
 
 </HTML>
-"),       uses(Modelica(version="2.2.1")));
+"),       uses(Modelica(version="3.2.1")));
 
         replaceable Real Value = 1 "Cross value";
         //parameter Real Threshold = 1e-010 "Detection value threshold";
@@ -22648,7 +22647,7 @@ This model translates messages into a boolean signal.
 <p>
 The value of the output signal is true if the value of the received message is greater than 0, or false otherwise.
 </p>
-</HTML>"),         uses(Modelica(version="2.2.1")));
+</HTML>"),         uses(Modelica(version="3.2.1")));
 
           SRC.Interfaces.inPort inport annotation (extent=[-116,-10;-96,10]);
           annotation (Icon, Diagram);
@@ -22698,7 +22697,7 @@ The generated message has value 0 and a type equal to the <i>EType</i> parameter
 </p>
 
 </HTML>
-"),       uses(Modelica(version="2.2.1")),
+"),       uses(Modelica(version="3.2.1")),
             Icon(Text(
                 extent=[-60,100; 60,60],
                 style(color=3, rgbcolor={0,0,255}),
@@ -22748,7 +22747,7 @@ The generated message has value 1 and a type equal to the <i>EType</i> parameter
 </p>
 
 </HTML>
-"),       uses(Modelica(version="2.2.1")));
+"),       uses(Modelica(version="3.2.1")));
 
         parameter Real Threshold = 1e-010 "Detection value threshold";
         parameter Integer EType = 1 "Type of the event to generate";
@@ -22795,7 +22794,7 @@ The generated message has a value equal to the signal and a type equal to the <i
 </p>
 
 </HTML>
-"),       uses(Modelica(version="2.2.1")),
+"),       uses(Modelica(version="3.2.1")),
             Icon(
                 Text(
                   extent=[-80,100;80,20], style(
@@ -22975,7 +22974,7 @@ These messages have to be sent simultaneously.
 
 
 </HTML>
-"),       uses(Modelica(version="2.2.1")));
+"),       uses(Modelica(version="3.2.1")));
 
       package IntegratorQSS1
 
@@ -23841,7 +23840,7 @@ These messages have to be sent simultaneously.
                   sigma:=s;
                 end if;
 
-               else //gehˆrt zu a<>0
+               else //geh√∂rt zu a<>0
                  if b<>0 then
                    x1:=-c/b;
                    x2:=x1 - 2*dQ/b;
@@ -24122,7 +24121,7 @@ These messages have to be sent simultaneously.
                   sigma_p:=s;
                 end if;
 
-               else //gehˆrt zu a<>0
+               else //geh√∂rt zu a<>0
                  if b<>0 then
                    x1:=-c/b;
                    x2:=x1 - 2*quantum_i/b;
@@ -24147,7 +24146,7 @@ These messages have to be sent simultaneously.
     end SRC;
 
   end DEVSLib;
-  annotation (uses(Modelica(version="2.2.1")));
+  annotation (uses(Modelica(version="3.2.1")));
 
   package CellularPDEVS
   model UsersGuide "Users Guide"
@@ -24159,7 +24158,7 @@ These messages have to be sent simultaneously.
 <dl>
 <dt><b>Author:</b></dt>
 <dd><a href=\"http://www.euclides.dia.uned.es/vsanz\"> Victorino Sanz </a><br>
-    Dpto. Inform·tica y Autom·tica, UNED<br>
+    Dpto. Inform√°tica y Autom√°tica, UNED<br>
     Juan del Rosal, 16<br>
     28040, Madrid<br>
     Spain<br>
@@ -24341,7 +24340,7 @@ see the license conditions (including the disclaimer of warranty) <a href=\"Mode
 <dl>
 <dt><b>Author:</b></dt>
 <dd><a href=\"http://www.euclides.dia.uned.es/vsanz\"> Victorino Sanz </a><br>
-    Dpto. Inform·tica y Autom·tica, UNED<br>
+    Dpto. Inform√°tica y Autom√°tica, UNED<br>
     Juan del Rosal, 16<br>
     28040, Madrid<br>
     Spain<br>
@@ -25042,7 +25041,7 @@ For a detailed description of the implementation of the package and its internal
 <dl>
 <dt><b>Author:</b></dt>
 <dd><a href=\"http://www.euclides.dia.uned.es/vsanz\"> Victorino Sanz </a><br>
-    Dpto. Inform·tica y Autom·tica, UNED<br>
+    Dpto. Inform√°tica y Autom√°tica, UNED<br>
     Juan del Rosal, 16<br>
     28040, Madrid<br>
     Spain<br>
@@ -25062,7 +25061,7 @@ see the license conditions (including the disclaimer of warranty) <a href=\"Mode
 </p><br>
 
 </HTML>
-"),   uses(Modelica(version="2.2.1")),
+"),   uses(Modelica(version="3.2.1")),
       Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,
               100}}), graphics={Bitmap(extent={{-100,100},{98,-100}}, fileName=
                 "Figs/simanlib-logo.png")}));
@@ -25164,7 +25163,7 @@ After that, the ports of the included blocks have to be properly connected.<br>
 The flowchart diagram of a single server with queue system is shown in the next figure.
 </p>
 <br>
-<img src=\"..\Figs\\Stut1.png\">
+<img src=\"..\\Figs\\Stut1.png\">
 
 <p>
 The parameters of each block has to be defined to represent the behavior of the system (e.g. the inter-arrival times, the processing delays, capacity of the queue, etc.).
@@ -25189,7 +25188,7 @@ The elements required by the single server with queue model are shown in the nex
 <li> A Resource element has been included and connected with its associated Seize and Release blocks.
 </ul>
 </p>
-<img src=\"..\Figs\\Stut2.png\">
+<img src=\"..\\Figs\\Stut2.png\">
 <p>
 The parameters of each element has also to be defined to represent the behavior of the system (e.g. ordering policy of the queue, capacity of the resource, etc.)
 </p>
@@ -25231,7 +25230,7 @@ This is, the Quantizer, CrossUP, CrossDOWN and DICO models can be combined with 
 <p>
 The use of a CrossDOWN model to detect the condition to generate new entities (using the input port of the Create block) is shown in the next figure.
 </p>
-<br><img src=\"..\Figs\\Shyb1.png\">
+<br><img src=\"..\\Figs\\Shyb1.png\">
 
 <p>
 Additionally, the ExternalAssign block has been developed to provide an interaction mechanism between the flow of entities and the continuous-time part of the model.
@@ -25241,7 +25240,7 @@ The change port has been included to detect assignments, even when the new value
 <p>
 The difference between the Assign and the ExternalAssign blocks is shown in the next figure (notice the two additional output ports in the ExternalAssign block).
 </p>
-<br><img src=\"..\Figs\\Shyb2.png\">
+<br><img src=\"..\\Figs\\Shyb2.png\">
 <p>
 The following code shows the detection of variable assignments (checking the value of the truckL1.change port, where truckL1 is an ExternalAssign block)
 and the reinitialization of continuous-time variables.
@@ -27116,7 +27115,7 @@ The PSNumberIn variable is declared as inner and initialized in the Draft model.
                 //sout.sigma := sout.interval; // set next arrival time
                 (next,sout.Cg1,sout.Cg2,sout.Cg3,sout.Cg4,sout.Cg5,sout.Cg6,sout.Bg1,
                   sout.Bg2,sout.Bg3,sout.Bg4,sout.Bg5,sout.Bg6,sout.Ig1,sout.Ig2,
-                  sout.Ig3,sout.Ig4,sout.Ig5,sout.Ig6,sout.Anti,sout.IncPrec) :=
+                  sout.Ig3,sout.Ig4,sout.Ig5,sout.Ig6,sout.zAnti,sout.zIncPrec) :=
                   RandomLib.Variates.GenerateVariateWrap(
                           s.Cg1,
                           s.Cg2,
@@ -27136,8 +27135,8 @@ The PSNumberIn variable is declared as inner and initialized in the Draft model.
                           s.Ig4,
                           s.Ig5,
                           s.Ig6,
-                          s.Anti,
-                          s.IncPrec,
+                          s.zAnti,
+                          s.zIncPrec,
                           s.interval,
                           p1,
                           p2,
@@ -27238,8 +27237,8 @@ The PSNumberIn variable is declared as inner and initialized in the Draft model.
             Real Ig4;
             Real Ig5;
             Real Ig6;
-            Integer Anti;
-            Integer IncPrec;
+            Integer zAnti;
+            Integer zIncPrec;
             Integer e;
             Boolean extcon;
           end st;
@@ -27280,7 +27279,7 @@ The PSNumberIn variable is declared as inner and initialized in the Draft model.
             out.Nout := 0;
             out.e := Elements.Entities.NewEntity(out.psni,out.ETHCR,out.ETVA,out.ETNVA,out.ETW,out.ETT,out.ETO,out.ETID,first);
             (out.Cg1,out.Cg2,out.Cg3,out.Cg4,out.Cg5,out.Cg6,out.Bg1,out.Bg2,out.Bg3,out.Bg4,out.Bg5,out.Bg6,out.Ig1,out.Ig2,out.Ig3,
-              out.Ig4,out.Ig5,out.Ig6,out.Anti,out.IncPrec) :=
+              out.Ig4,out.Ig5,out.Ig6,out.zAnti,out.zIncPrec) :=
               RandomLib.Variates.initGeneratorWrap();
             out.extcon := extcon;
           end initst;
@@ -28067,7 +28066,7 @@ Entities are stored in an internal queue, ordered by the duration of the delay (
               //Elements.Entities.ESet(integer(x.Value),8,T); // set entity startTime
               (delay,sout.Cg1,sout.Cg2,sout.Cg3,sout.Cg4,sout.Cg5,sout.Cg6,sout.Bg1,
                 sout.Bg2,sout.Bg3,sout.Bg4,sout.Bg5,sout.Bg6,sout.Ig1,sout.Ig2,
-                sout.Ig3,sout.Ig4,sout.Ig5,sout.Ig6,sout.Anti,sout.IncPrec) :=
+                sout.Ig3,sout.Ig4,sout.Ig5,sout.Ig6,sout.zAnti,sout.zIncPrec) :=
                 RandomLib.Variates.GenerateVariateWrap(
                           s.Cg1,
                           s.Cg2,
@@ -28087,8 +28086,8 @@ Entities are stored in an internal queue, ordered by the duration of the delay (
                           s.Ig4,
                           s.Ig5,
                           s.Ig6,
-                          s.Anti,
-                          s.IncPrec,
+                          s.zAnti,
+                          s.zIncPrec,
                           s.duration,
                           p1,
                           p2,
@@ -28159,8 +28158,8 @@ Entities are stored in an internal queue, ordered by the duration of the delay (
             Real Ig4;
             Real Ig5;
             Real Ig6;
-            Integer Anti;
-            Integer IncPrec;
+            Integer zAnti;
+            Integer zIncPrec;
             Integer e;
             Integer alloc;
           end st;
@@ -28177,7 +28176,7 @@ Entities are stored in an internal queue, ordered by the duration of the delay (
             out.duration := duration;
             (out.Cg1,out.Cg2,out.Cg3,out.Cg4,out.Cg5,out.Cg6,out.Bg1,out.Bg2,
               out.Bg3,out.Bg4,out.Bg5,out.Bg6,out.Ig1,out.Ig2,out.Ig3,out.Ig4,
-              out.Ig5,out.Ig6,out.Anti,out.IncPrec) :=
+              out.Ig5,out.Ig6,out.zAnti,out.zIncPrec) :=
               RandomLib.Variates.initGeneratorWrap();
             out.e := 0;
             out.alloc := alloc;
@@ -28480,7 +28479,7 @@ Branches are represented in SIMANLib by the BranchRule blocks.
               //      u := RandomUniform(0);
               (u,sout.Cg1,sout.Cg2,sout.Cg3,sout.Cg4,sout.Cg5,sout.Cg6,sout.Bg1,
                 sout.Bg2,sout.Bg3,sout.Bg4,sout.Bg5,sout.Bg6,sout.Ig1,sout.Ig2,
-                sout.Ig3,sout.Ig4,sout.Ig5,sout.Ig6,sout.Anti,sout.IncPrec) :=
+                sout.Ig3,sout.Ig4,sout.Ig5,sout.Ig6,sout.zAnti,sout.zIncPrec) :=
                 RandomLib.Variates.GenerateVariateWrap(
                           s.Cg1,
                           s.Cg2,
@@ -28500,8 +28499,8 @@ Branches are represented in SIMANLib by the BranchRule blocks.
                           s.Ig4,
                           s.Ig5,
                           s.Ig6,
-                          s.Anti,
-                          s.IncPrec,
+                          s.zAnti,
+                          s.zIncPrec,
                           8,
                           0,
                           1,
@@ -28560,8 +28559,8 @@ Branches are represented in SIMANLib by the BranchRule blocks.
             Real Ig4;
             Real Ig5;
             Real Ig6;
-            Integer Anti;
-            Integer IncPrec;
+            Integer zAnti;
+            Integer zIncPrec;
           end st;
 
           function initst
@@ -28577,7 +28576,7 @@ Branches are represented in SIMANLib by the BranchRule blocks.
             out.e := 0;
             (out.Cg1,out.Cg2,out.Cg3,out.Cg4,out.Cg5,out.Cg6,out.Bg1,out.Bg2,
               out.Bg3,out.Bg4,out.Bg5,out.Bg6,out.Ig1,out.Ig2,out.Ig3,out.Ig4,
-              out.Ig5,out.Ig6,out.Anti,out.IncPrec) :=
+              out.Ig5,out.Ig6,out.zAnti,out.zIncPrec) :=
               RandomLib.Variates.initGeneratorWrap();
           end initst;
         end Branch;
@@ -30592,7 +30591,7 @@ The functions implemented to manage entities are:
       end Elements;
 
     end SRC;
-    annotation (uses(Modelica(version="2.2.1")), Icon,
+    annotation (uses(Modelica(version="3.2.1")), Icon,
       experiment(StopTime=480));
   end SIMANLib;
 
@@ -30632,7 +30631,7 @@ For a detailed description of the implementation of the package and its internal
 <dl>
 <dt><b>Author:</b></dt>
 <dd><a href=\"http://www.euclides.dia.uned.es/vsanz\"> Victorino Sanz </a><br>
-    Dpto. Inform·tica y Autom·tica, UNED<br>
+    Dpto. Inform√°tica y Autom√°tica, UNED<br>
     Juan del Rosal, 16<br>
     28040, Madrid<br>
     Spain<br>
@@ -30652,7 +30651,7 @@ see the license conditions (including the disclaimer of warranty) <a href=\"Mode
 </p><br>
 
 </HTML>
-"),   uses(Modelica(version="2.2.1")),
+"),   uses(Modelica(version="3.2.1")),
       Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,
               100}}), graphics={Bitmap(extent={{-100,100},{100,-100}}, fileName=
                "Figs/arenalib-logo.png")}));
@@ -30662,7 +30661,7 @@ see the license conditions (including the disclaimer of warranty) <a href=\"Mode
               100,100}}),
               graphics),
       Icon,
-      uses(Modelica(version="2.2.1")));
+      uses(Modelica(version="3.2.1")));
 
   model UsersGuide "Users Guide"
 
@@ -30762,7 +30761,7 @@ In order to construct the flowchart diagram, the modules have to be included fro
 After that, the ports of the included blocks have to be properly connected.<br>
 The flowchart diagram of a single server with queue system is shown in the next figure.
 </p>
-<img src=\"..\Figs\\Atut1.png\">
+<img src=\"..\\Figs\\Atut1.png\">
 
 <p>
 The parameters of each module has to be defined to represent the behavior of the system (e.g. the inter-arrival times, the processing delays, etc.).
@@ -30784,7 +30783,7 @@ The data modules required by the single server with queue model are shown in the
 <li> A Resource data module has been included and connected with its associated Process module.
 </ul>
 </p>
-<img src=\"..\Figs\\Atut2.png\">
+<img src=\"..\\Figs\\Atut2.png\">
 <p>
 The parameters of each data module has also to be defined to represent the behavior of the system (e.g. capacity of the resource, etc.)
 </p>
@@ -30823,7 +30822,7 @@ This is, the Quantizer, CrossUP, CrossDOWN and DICO models can be combined with 
 <p>
 The use of the CrossDOWN and CrossUP models to detect the condition to generate new messages is shown in the next figure.
 </p>
-<img src=\"..\Figs\\Ahyb1.png\">
+<img src=\"..\\Figs\\Ahyb1.png\">
 
 
 <h3><font color=\"#008000\">Assign Module</font></h3>
@@ -30849,7 +30848,7 @@ Additionally, in order to provide a mechanism to describe the duration of the pr
 This module is basically a Process module, that represents a process applied to the entities, but includes two additional ports: EntityStart and EntityEnd.
 These ports are shown in the next figure.
 </p>
-<img src=\"..\Figs\\Ahyb2.png\">
+<img src=\"..\\Figs\\Ahyb2.png\">
 <p>
 Each time an entity has to be processed, the ExternalProcess module sets its EntityStart port with the value of the serial number of that entity.<br>
 The external process has to check the changes in the values of that port, in order to detect new entity arrivals and start processing them.<br>
